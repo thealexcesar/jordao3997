@@ -1,24 +1,27 @@
-# jordao3997
+# Party Hall Rental at Jordão 3997 Farm
 
-## Project setup
-```
-yarn install
-```
+This project is a web system designed to facilitate the rental of a party hall located at Jordão 3997 farm.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Features
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- [ ] **Online Booking**: Allow your customers to view availability and make reservations directly through the system.
+- [ ] **Photo Gallery**: Showcase the party hall with an attractive photo gallery.
+- [ ] **Detailed Information**: Provide details about services offered, hall capacity, available amenities, and more.
+- [ ] **Contact and Location**: Facilitate contact with clear contact information and an interactive map.
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Technologies Used
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- **Vue.js**: Progressive JavaScript framework for building user interfaces.
+- **Font Awesome**: Scalable vector icon library that can be customized.
+- **Vue I18n**: Translate Application.
+
+## Prerequisites
+
+- Node.js
+- Vue CLI
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/thealexcesar/jordao3997.git
