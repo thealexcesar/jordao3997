@@ -11,7 +11,7 @@
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
-  name: 'HomePage',
+  name: 'AppMain',
   props: {
     msg: String
   },
