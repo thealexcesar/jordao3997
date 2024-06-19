@@ -1,5 +1,8 @@
 {
   "welcome": "Bem-vindo ao nosso site!",
   "about": "Sobre nós",
-  "contact": "Contate-nos"
+  "contact": "Contate-nos",
+
+  "lang": { "english": "Inglês", "spanish": "Espanhol", "portuguese": "Português", "deutsch": "Alemão" }
+
 }

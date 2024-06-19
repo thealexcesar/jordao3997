@@ -6,7 +6,6 @@ export function toggleTheme() {
 
     root.setAttribute('data-theme', themeAttr);
     localStorage.setItem('data-theme', themeAttr);
-    console.log(isLight)
 }
 export function setThemeFromLocalStorage() {
     if (typeof document !== 'undefined') {

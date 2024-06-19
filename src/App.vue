@@ -1,17 +1,7 @@
 <template>
   <div id="app">
     <AppHeader />
-    <div style="display:flex; justify-content: center; align-items: center; flex-direction: column;">
-      <div class="img-wrapper">
-        <img alt="Vue logo" src="@/assets/3997.jpg" />
-      </div>
-      <div class="hello" style="display:flex;">
-        <AppMain :msg="msg" />
-        <h1>{{ $t('welcome') }}</h1>
-        <p>{{ $t('about') }}</p>
-        <p>{{ $t('contact') }}</p>
-      </div>
-    </div>
+    <AppMain />
   </div>
 </template>
 
@@ -34,5 +24,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import "@/assets/style"
+  @import "@/assets/style"
 </style>
