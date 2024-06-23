@@ -1,0 +1,236 @@
+/** Table of Content
+  -----------------------------
+  1.0 Reset
+  2.0 Variables
+
+  3.0 Mixins
+  3.1 transition
+  3.3 Theme
+
+  4.0 Dark Theme
+  5.0 Light Theme
+ --------------------------- */
+/* Variables
+  ---------------------------------------------------------------------------------------------- */
+/* End Variables ------------------------------------------------------------------------------- */
+/* Reset
+  ---------------------------------------------------------------------------------------------- */
+* {
+  border: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%; }
+
+.logo-wrapper {
+  padding: 0;
+  margin: 0;
+  width: 7rem; }
+
+ul, li, a, button {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0; }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 8vh;
+  padding: 0;
+  color: #F8FAFC;
+  background-color: #020617; }
+  .header .content-header {
+    width: 100%; }
+  .header button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #020617;
+    border-radius: .5rem;
+    cursor: pointer; }
+    .header button:hover {
+      color: #020617;
+      background-color: #F8FAFC; }
+
+.container {
+  padding: 0 1rem 0 1rem;
+  margin: auto; }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.text-light {
+  color: #F8FAFC; }
+
+/* End Reset ----------------------------------------------------------------------------------- */
+/* Mixins
+  ---------------------------------------------------------------------------------------------- */
+.nav-links {
+  color: inherit; }
+
+/* End Mixins ---------------------------------------------------------------------------------- */
+/* Dark Theme
+  ---------------------------------------------------------------------------------------------- */
+[data-theme="dark"] body {
+  height: 100vh;
+  width: 100vw;
+  color: #F8FAFC;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(to bottom, #000, #020617);
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; }
+  [data-theme="dark"] body .border-square,
+  [data-theme="dark"] body .hero-button,
+  [data-theme="dark"] body .avatar {
+    border-color: #020617;
+    color: #020617; }
+  [data-theme="dark"] body button {
+    color: #F8FAFC;
+    border: 1px solid #F8FAFC;
+    background-color: #000; }
+    [data-theme="dark"] body button:hover {
+      color: #000;
+      background-color: #F8FAFC;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out; }
+  [data-theme="dark"] body image {
+    height: auto;
+    width: 4rem; }
+
+/* End Dark Theme ------------------------------------------------------------------------------ */
+/* Light Theme
+  ---------------------------------------------------------------------------------------------- */
+[data-theme="light"] body {
+  height: 100vh;
+  width: 100vw;
+  color: #020617;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(to bottom, #F8FAFC, #FFF);
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; }
+  [data-theme="light"] body .border-square,
+  [data-theme="light"] body .hero-button,
+  [data-theme="light"] body .avatar {
+    border-color: #F8FAFC;
+    color: #F8FAFC; }
+  [data-theme="light"] body button {
+    color: #020617;
+    border: 1px solid #020617;
+    background-color: #F8FAFC; }
+    [data-theme="light"] body button:hover {
+      color: #F8FAFC;
+      background-color: #020617;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out; }
+  [data-theme="light"] body image {
+    height: auto;
+    width: 4rem; }
+
+/* End Light Theme ----------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px; }
+
+.nav-links {
+  list-style-type: none; }
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px; }
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem; }
+  .nav-links a:hover {
+    text-decoration: underline; }
+
+.destaque {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0; }
+  .destaque h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px; }
+  .destaque p {
+    font-size: 1.2rem;
+    margin-bottom: 30px; }
+  .destaque .btn {
+    display: inline-block;
+    background-color: #ff7f50;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px; }
+    .destaque .btn:hover {
+      background-color: #e64a19; }
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; }
+
+.servico {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px; }
+  .servico h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px; }
+  .servico p {
+    font-size: 1.1rem; }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px; }
+
+.footer {
+  background-color: #35424a;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center; }
+  .footer h2 {
+    font-size: 2rem;
+    margin-bottom: 20px; }
+  .footer .contato-info {
+    list-style-type: none;
+    margin-bottom: 20px; }
+    .footer .contato-info li {
+      font-size: 1.1rem;
+      margin-bottom: 10px; }
+  .footer .social-links {
+    margin-top: 20px; }
+    .footer .social-links .social-link {
+      display: inline-block;
+      font-size: 1.5rem; }

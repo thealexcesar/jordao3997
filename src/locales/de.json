@@ -1,5 +1,9 @@
 {
-  "welcome": "Willkommen auf unserer Website!",
-  "about": "Über uns",
-  "contact": "Kontaktiere uns"
+  "meta": {
+    "description": "Mieten Sie einen Festsaal im Jordão 3779 für Veranstaltungen in Blumenau. Moderner und vielseitiger Raum für Hochzeiten, Geburtstage und Firmenveranstaltungen. Jetzt buchen!"
+  },
+  "main-title": "Mehrsprachiger Inhalt",
+  "about": "Inhalt auf Deutsch",
+  "content": "Dies ist ein Beispiel für Inhalt auf Deutsch.",
+  "title": "Jordão 3779 Festsaal - Raumvermietung für Veranstaltungen"
 }
