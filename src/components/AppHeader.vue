@@ -3,7 +3,7 @@
     <nav class="flex content-header container">
       <ul class="nav-links flex">
         <li class="logo-wrapper">
-          <img alt="Vue logo" src="@/assets/3997.jpg" />
+<!--          <img alt="Vue logo" src="@/assets/3997.jpg" />-->
         </li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#servicos">Serviços</a></li>

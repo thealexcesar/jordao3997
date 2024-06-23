@@ -11,7 +11,7 @@ const app = createApp(App);
 
 const messages = {
     en: require('./locales/en.json'),
-    es: require('./locales/es.json'),
+    es: require('./locales/es.yml'),
     pt: require('./locales/pt.json'),
     de: require('./locales/de.json')
 }
