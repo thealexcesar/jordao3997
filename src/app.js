@@ -85,9 +85,9 @@ function setTheme(theme) {
         localStorage.setItem('theme', theme);
 
         if (theme === 'dark') {
-            themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
             themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
 }
@@ -110,9 +110,48 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', () => {
     init();
     initTheme();
+    // toggleMenus();
 
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', toggleTheme);
     }
+
+  /*  const menuIcon = document.querySelector('.menu-icon');
+    if (menuIcon) {
+        menuIcon.addEventListener('click', toggleMenuDisplay);
+    }*/
 });
+
+/*
+function toggleMenuDisplay() {
+    const abcMenu = document.querySelector('.abc-menu');
+    if (abcMenu.style.display === 'none' || abcMenu.style.display === '') {
+        abcMenu.style.display = 'block';
+    } else {
+        abcMenu.style.display = 'none';
+    }
+
+    console.log('Menu ícone clicado!');
+}
+
+function toggleMenus() {
+    const smallScreen = window.matchMedia("(max-width: 600px)");
+
+    function handleToggle(e) {
+        const menu = document.querySelector('.menu');
+        const abcMenu = document.querySelector('.abc-menu');
+
+        if (e.matches) {
+            menu.style.display = 'block';
+            abcMenu.style.display = 'none';
+        } else {
+            menu.style.display = 'none';
+            abcMenu.style.display = 'block';
+        }
+    }
+
+    handleToggle(smallScreen);
+    smallScreen.addListener(handleToggle);
+}
+*/
