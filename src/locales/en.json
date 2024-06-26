@@ -1,9 +1,15 @@
 {
+  "lang": {
+    "pt-br": "Portuguese",
+    "es": "Spanish",
+    "en": "English",
+    "de": "German"
+  },
   "meta": {
     "description": "Rent a party hall at Jordão 3779 for events in Blumenau. Modern and versatile space for weddings, birthdays, and corporate events. Book now!"
   },
   "main-title": "Multilingual Content",
   "about": "Content in English",
-  "content": "This is an example of content in English.",
-  "title": "Jordão 3779 Party Hall - Space Rental for Events"
+  "title": "Jordão 3779 Party Hall - Space Rental for Events",
+  "content": "Discover Jordão 3997 event space for your next celebration! Whether it's a wedding, birthday party, or corporate event, our venue offers a perfect setting with modern amenities."
 }

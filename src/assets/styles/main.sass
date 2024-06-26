@@ -27,12 +27,10 @@ $light: #F8FAFC
 
 img
   width: 100%
-  height: 100%
+  height: auto
   max-width: 100%
-.logo-wrapper
-  padding: 0
-  margin: 0
-  width: 7rem
+  object-fit: contain
+  border-radius: 8px
 
 ul, li, a, button
   list-style: none
@@ -50,7 +48,19 @@ header
   background-color: $dark
   .content-header
     width: 100%
+    a
+      height: 6vh
+    img.logo
+      height: inherit
+      //width: auto
+      padding: 0
+      object-fit: contain
 
+  #theme-icon
+    height: 28px
+    width: 28px
+    &:hover
+      cursor: pointer
 
   button
     margin: 0 0.5rem
@@ -61,6 +71,7 @@ header
     &:hover
       color: $dark
       background-color: $light
+
 .container
   padding: 0 1rem 0 1rem
   margin: auto
@@ -69,6 +80,7 @@ header
   display: flex
   align-items: center
   justify-content: space-between
+
 .text-light
   color: $light
 /* End Reset ----------------------------------------------------------------------------------- */
@@ -135,149 +147,33 @@ header
   @include theme-styles($foreground, $light, $background-start, $background-end)
 /* End Light Theme ----------------------------------------------------------------------------- */
 
-//#app
-//  margin: 4rem
-//  height: 100vh
-//
-//  -moz-osx-font-smoothing: grayscale
-//  text-align: center
-//  background-color: inherit
-//  color: inherit
-//  button
-//    cursor: pointer
-//    margin: 1px
-//    padding: .5rem
-//    border-radius: 4px
-//    &:hover
-//      filter: brightness(90%)
 
-
-// Reset básico
-*
-  margin: 0
-  padding: 0
-  box-sizing: border-box
-
-// Estilo geral
-body
-  font-family: Arial, sans-serif
-  line-height: 1.6
-
-h1
-  text-align: center
 .container
   max-width: 1100px
   margin: 0 auto
   padding: 0 20px
 
-
+.social-media
+  li
+    padding: 4px
 .nav-links
   list-style-type: none
-
-.nav-links li
-  display: inline
-  margin-right: 10px
-
-.nav-links a
-  color: $light
-  text-decoration: none
-  width: 100%
-  font-size: 1.2rem
-  &:hover
-    color: #4267B2
-
-// Estilos da seção de destaque
-//.destaque
-//  //background-image: url('caminho/para/sua/imagem.jpg')
-//  background-size: cover
-//  background-position: center
-//  color: #fff
-//  text-align: center
-//  padding: 100px 0
-//
-//  h2
-//    font-size: 2.5rem
-//    margin-bottom: 20px
-//
-//  p
-//    font-size: 1.2rem
-//    margin-bottom: 30px
-//
-//  .btn
-//    display: inline-block
-//    background-color: #ff7f50
-//    color: #fff
-//    font-size: 1.1rem
-//    padding: 10px 20px
-//    text-decoration: none
-//    border-radius: 5px
-//
-//    &:hover
-//      background-color: #e64a19
-//
-//// Estilos da seção de serviços
-//.servicos-grid
-//  display: grid
-//  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-//  gap: 20px
-//
-//.servico
-//  background-color: #f0f0f0
-//  padding: 20px
-//  border-radius: 5px
-//
-//  h3
-//    font-size: 1.5rem
-//    margin-bottom: 10px
-//
-//  p
-//    font-size: 1.1rem
-//
-//// Estilos da seção de galeria
-//.galeria-grid
-//  display: grid
-//  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
-//  gap: 10px
-//
-//// Estilos do rodapé
-//.footer
-//  background-color: #35424a
-//  color: #fff
-//  padding: 50px 0
-//  text-align: center
-//
-//  h2
-//    font-size: 2rem
-//    margin-bottom: 20px
-//
-//  .contato-info
-//    list-style-type: none
-//    margin-bottom: 20px
-//
-//    li
-//      font-size: 1.1rem
-//      margin-bottom: 10px
-//
-//  .social-links
-//    margin-top: 20px
-//
-//    .social-link
-//      display: inline-block
-//      font-size: 1.5rem
-
-
-
-//@media screen and (min-width: 992px)
-//a.whatsapp-btn
-//  bottom: 40px
-//  right: 40px
+  .social-media
+    & > li
+      padding: 4px
+  & a
+    color: $light
+    text-decoration: none
+    font-size: 1.2rem
+    &:hover
+      color: #4267B2
 
 
 a.whatsapp-btn
   z-index: 1070
   position: fixed
-  width: 52px
-  height: 52px
+  width: 56px
+  height: 56px
   bottom: 16px
   right: 16px
   border-radius: 50px
@@ -322,3 +218,38 @@ a.whatsapp-btn
 
   .abc-menu
     display: none
+
+
+
+.dropdown
+  position: relative
+  display: inline-block
+
+.dropbtn
+  background-color: #333
+  color: $light
+  padding: 10px
+  border: none
+  cursor: pointer
+
+.dropdown-content
+  display: none
+  position: absolute
+  right: 0
+  background-color: $dark
+  min-width: 160px
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  z-index: 1
+  & > a
+    color: $light
+    padding: 12px 16px
+    text-decoration: none
+    display: block
+    &:hover
+      background-color: #333333
+
+.dropdown:hover .dropdown-content
+  display: block
+
+.dropdown:hover .dropbtn
+  background-color: #555

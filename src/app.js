@@ -1,16 +1,24 @@
-/* i18n
------------------------------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    initTheme();
+    const themeToggleBtn = document.getElementById('theme-icon');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+});
+
 async function language(lang) {
     try {
         const response = await fetch(`./src/locales/${lang}.json`);
         const data = await response.json();
-
         console.log(`Dados carregados para (${lang})`, data);
 
         updateContent(data);
         updateMetaTags(data);
+        updateLanguageDropdown(data.lang);
         localStorage.setItem('language', lang);
         document.documentElement.setAttribute('lang', lang);
+        updateCurrentLanguageDisplay(lang, data.lang);
     } catch (error) {
         console.error('Erro ao carregar arquivo JSON:', error);
     }
@@ -18,10 +26,7 @@ async function language(lang) {
 
 function updateContent(data) {
     const elementsToTranslate = document.querySelectorAll('.i18n');
-
-    elementsToTranslate.forEach(element => {
-        updateElement(element, data);
-    });
+    elementsToTranslate.forEach(element => updateElement(element, data));
 }
 
 function updateElement(element, data) {
@@ -50,14 +55,27 @@ function updateMetaTags(data) {
     if (metaDescription) {
         metaDescription.content = data.meta.description;
     }
-
     if (metaOgDescription) {
         metaOgDescription.content = data.meta.description;
     }
-
     if (metaTwitterDescription) {
         metaTwitterDescription.content = data.meta.description;
     }
+}
+
+function updateCurrentLanguageDisplay(lang, languageNames) {
+    const currentLanguageElement = document.getElementById('current-language');
+    currentLanguageElement.textContent = languageNames[lang] || 'English';
+}
+
+function updateLanguageDropdown(languageNames) {
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        const langKey = link.id.split('.')[1];
+        if (languageNames[langKey]) {
+            link.textContent = languageNames[langKey];
+        }
+    });
 }
 
 function getDefaultLanguage() {
@@ -66,12 +84,7 @@ function getDefaultLanguage() {
 
 async function init() {
     let lang = localStorage.getItem('language') || getDefaultLanguage();
-
-    try {
-        await language(lang);
-    } catch (error) {
-        console.error('Erro ao inicializar aplicativo:', error);
-    }
+    await language(lang);
 }
 
 /* Theme
@@ -79,26 +92,18 @@ async function init() {
 function setTheme(theme) {
     const htmlElement = document.documentElement;
     const themeIcon = document.getElementById('theme-icon');
+    const icon = (t, i) => `<li id="theme-icon ${theme}" class="flex"><i class="fas fa-${t} fa-lg" title="${i}"></i></li> ${i}`;
 
     if (htmlElement && themeIcon) {
         htmlElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-
-        if (theme === 'dark') {
-            themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
-        }
+        themeIcon.innerHTML = icon(theme === 'dark' ? 'sun' : 'moon', theme === 'dark' ? ' Light' : ' Dark');
     }
 }
 
 function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        setTheme('light');
-    }
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
 }
 
 function toggleTheme() {
@@ -106,52 +111,3 @@ function toggleTheme() {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    init();
-    initTheme();
-    // toggleMenus();
-
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
-
-  /*  const menuIcon = document.querySelector('.menu-icon');
-    if (menuIcon) {
-        menuIcon.addEventListener('click', toggleMenuDisplay);
-    }*/
-});
-
-/*
-function toggleMenuDisplay() {
-    const abcMenu = document.querySelector('.abc-menu');
-    if (abcMenu.style.display === 'none' || abcMenu.style.display === '') {
-        abcMenu.style.display = 'block';
-    } else {
-        abcMenu.style.display = 'none';
-    }
-
-    console.log('Menu ícone clicado!');
-}
-
-function toggleMenus() {
-    const smallScreen = window.matchMedia("(max-width: 600px)");
-
-    function handleToggle(e) {
-        const menu = document.querySelector('.menu');
-        const abcMenu = document.querySelector('.abc-menu');
-
-        if (e.matches) {
-            menu.style.display = 'block';
-            abcMenu.style.display = 'none';
-        } else {
-            menu.style.display = 'none';
-            abcMenu.style.display = 'block';
-        }
-    }
-
-    handleToggle(smallScreen);
-    smallScreen.addListener(handleToggle);
-}
-*/

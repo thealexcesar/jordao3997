@@ -24,14 +24,10 @@
 
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 100%;
-}
-
-.logo-wrapper {
-  padding: 0;
-  margin: 0;
-  width: 7rem;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 ul, li, a, button {
@@ -52,6 +48,21 @@ header {
 }
 header .content-header {
   width: 100%;
+}
+header .content-header a {
+  height: 6vh;
+}
+header .content-header img.logo {
+  height: inherit;
+  padding: 0;
+  object-fit: contain;
+}
+header #theme-icon {
+  height: 28px;
+  width: 28px;
+}
+header #theme-icon:hover {
+  cursor: pointer;
 }
 header button {
   margin: 0 0.5rem;
@@ -166,40 +177,25 @@ header button:hover {
 }
 
 /* End Light Theme ----------------------------------------------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-h1 {
-  text-align: center;
-}
-
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+.social-media li {
+  padding: 4px;
+}
+
 .nav-links {
   list-style-type: none;
 }
-
-.nav-links li {
-  display: inline;
-  margin-right: 10px;
+.nav-links .social-media > li {
+  padding: 4px;
 }
-
 .nav-links a {
   color: #F8FAFC;
   text-decoration: none;
-  width: 100%;
   font-size: 1.2rem;
 }
 .nav-links a:hover {
@@ -209,8 +205,8 @@ h1 {
 a.whatsapp-btn {
   z-index: 1070;
   position: fixed;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   bottom: 16px;
   right: 16px;
   border-radius: 50px;
@@ -258,6 +254,46 @@ a.whatsapp-btn:hover {
 }
 .menu .abc-menu {
   display: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #333;
+  color: #F8FAFC;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #020617;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content > a {
+  color: #F8FAFC;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content > a:hover {
+  background-color: #333333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #555;
 }
 
 /*# sourceMappingURL=main.css.map */
